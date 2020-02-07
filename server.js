@@ -6,10 +6,8 @@ const passport = require("./config/passport");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
-var db = require("./config/models");
 
 // Creating express app and configuring middleware needed for authentication
-var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -20,7 +18,7 @@ app.use(passport.session());
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+require("./routes/login-routes")(app);
 
 db.sequelize.sync({force: true}).then(function() {
     app.listen(PORT, function() {
