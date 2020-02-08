@@ -1,10 +1,14 @@
+//On the below link I found that I could the npm dotenv to read env files in my code
+//https://www.freecodecamp.org/news/heres-how-you-can-actually-use-node-environment-variables-8fdf98f53a0a/
+require('dotenv').config();
+
 const express = require('express');
 const session = require("express-session");
-const db = require('./config/models');
+const db = require('./models');
 
 const passport = require("./config/passport");
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3334;
 const app = express();
 
 // Creating express app and configuring middleware needed for authentication
