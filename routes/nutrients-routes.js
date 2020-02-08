@@ -1,4 +1,4 @@
-const db = require('../config/models');
+const db = require('../models');
 const axios = require('axios');
 
 
@@ -26,9 +26,10 @@ module.exports = function(app) {
         });
       });
 
-      app.post("/api/recipes", function(req,res){
-          
-      })
+  app.post("/api/recipes", function(req,res){
+      
+    
+  })
 
 
 //   app.get("/api/authors/:id", function(req, res) {
