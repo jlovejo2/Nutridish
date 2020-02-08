@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jlovejo2/Burger.git"
+    "url": "git+https://github.com/jlovejo2/Project_2.git"
   },
   "author": "James Lovejoy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jlovejo2/Burger/issues"
+    "url": "https://github.com/jlovejo2/Project_2/issues"
   },
-  "homepage": "https://github.com/jlovejo2/Burger#readme",
+  "homepage": "https://github.com/jlovejo2/Project_2#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
