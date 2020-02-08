@@ -4,3 +4,7 @@ form.login {
   background-color: blue;
   color: white;
 }
+
+body { 
+  background-image: url(/public/images/country-quilt.png);
+}
