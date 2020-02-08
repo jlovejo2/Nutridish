@@ -26,6 +26,10 @@ module.exports = function(app) {
         });
       });
 
+      app.post("/api/recipes", function(req,res){
+          
+      })
+
 
 //   app.get("/api/authors/:id", function(req, res) {
 //     // Here we add an "include" property to our options in our findOne query
