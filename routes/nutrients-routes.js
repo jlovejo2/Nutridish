@@ -1,4 +1,4 @@
-const db = require('../models');
+const db = require('../config/models');
 const axios = require('axios');
 
 
