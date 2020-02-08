@@ -8,10 +8,10 @@ module.exports = {
     "operatorsAliases": false
   },
   "test": {
-    "username": "root",
-    "password": "C0d!ng101520",
-    "database": "nutridish_db",
-    "host": "127.0.0.1",
+    "username": null,
+    "password": null,
+    "database": null,
+    "host": null,
     "dialect": "mysql",
     "operatorsAliases": false
   },
