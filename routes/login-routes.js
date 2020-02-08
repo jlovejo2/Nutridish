@@ -1,5 +1,5 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models/nutrients");
+var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function(app) {
