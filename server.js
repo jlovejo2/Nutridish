@@ -8,7 +8,7 @@ const db = require('./models');
 
 const passport = require("./config/passport");
 
-const PORT = process.env.PORT || 3334;
+const PORT = process.env.PORT || process.env.MY_PORT;
 const app = express();
 
 // Creating express app and configuring middleware needed for authentication
