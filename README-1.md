@@ -5,3 +5,5 @@
 - express
 - mysql2
 - sequelize
+- passport 
+- bcrypt 
