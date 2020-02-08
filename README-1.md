@@ -38,12 +38,16 @@ See the layout of the app below.
 ## NPMs Used:
 * NPM axios
 * NPM express
+* NPM sequelize
 * NPM mysql
 * NPM mysql2
 * NPM express
 * NPM express-sesion
 * NPM express-handlebars
 * NPM dotenv - used to read
+* NPM bcryptjs
+* NPM passport
+* NPM passport-local
 
 ## CSS Framework:
 * Bootstrap

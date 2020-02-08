@@ -105,3 +105,8 @@ dist
 
 # Node modules folder and all the files acquired from npm i
 node_modules/
+
+#
+.env
+apikeys.md
+password.json
