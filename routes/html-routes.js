@@ -14,14 +14,17 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
   router.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.render('search', {'layout': 'members.handlebars'});
+      //This line will render the search handlebars into the members layout
+      res.render('search', {'layout': 'main.handlebars'});
     }
     // res.sendFile(path.join(__dirname, "../public/main.html"));
+    //This line of code will render the index view into the main layout
     res.render('index', {'layout':'main.handlebars'});
   });
   
   router.get("/sign-up", function(req, res) {
-    res.render('signup');
+
+    res.render('signup', {'layou':'main.handlebars'});
   });
 
 
@@ -38,7 +41,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
   // // If a user who is not logged in tries to access this route they will be redirected to the signup page
   router.get("/members", isAuthenticated, function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/members.html"));
-    res.render('search', {'layout': 'members.handlebars'});
+    res.render('search');
   });
 
 

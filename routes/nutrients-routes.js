@@ -18,17 +18,21 @@ const axios = require('axios');
     });
   });
 
-  router.get("/api/nutrients/:nutrients", function(req,res) {
-      console.log("User has searched for" + req.params.nutrients);
+  router.get("/api/nutrients/:nutrients", function(req, res) {
+      console.log("User has searched for " + req.params.nutrients);
 
       const queryURL = `https://api.edamam.com/search?q=chicken&app_id=08b4fa57&app_key=8531f8a5f6847b98f73396ab5968aed9&nutrients%5B${req.params.nutrients}%5D=20%2B`
 
       axios.get(queryURL).then(function(apiRecipes){
-          console.log(apiRecipes);
-          console.log(apiRecipes.data.hits[0]);
-          
-         res.json(apiRecipes.data.hits);
-        });
+
+          // console.log(apiRecipes.data.hits);
+
+           const recipes = {
+            recipe: apiRecipes.data.hits
+          }
+
+          res.render('search', recipes); 
+        })
       });
 
   router.post("/api/recipes", function(req,res){
@@ -66,6 +70,7 @@ const axios = require('axios');
 //       res.json(dbAuthor);
 //     });
 //   });
+
 
 
 module.exports = router;
