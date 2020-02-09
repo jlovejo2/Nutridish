@@ -18,6 +18,7 @@ const passport = require("./config/passport");
 //Requiring the html-routes.js file which is used below to render routes for handlebars
 const routes = require('./routes/html-routes.js');
 const routes1 = require('./routes/login-routes.js');
+const routes2 = require('./routes/nutrients-routes.js');
 
 const app = express();
 
@@ -44,6 +45,7 @@ app.set('view engine', 'handlebars');
 
 app.use(routes);
 app.use(routes1);
+app.use(routes2);
 
 
 //Syncing our sequelize models created in model folder.

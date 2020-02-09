@@ -1,11 +1,14 @@
+//Imports express npm
+const express = require('express');
+
+//calls the express.router method
+const router = express.Router();
+
 const db = require('../models');
 const axios = require('axios');
 
-
-module.exports = function(app) {
-
     //This route will return all the nutrients available in the nutrients table
-  app.get("/api/nutrients", function(req, res) {
+  router.get("/api/nutrients", function(req, res) {
  
     db.Nutrients.findAll({}).then(function(dbNutrients) {
         
@@ -15,18 +18,20 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/nutrients/:nutrients", function(req,res) {
+  router.get("/api/nutrients/:nutrients", function(req,res) {
       console.log("User has searched for" + req.params.nutrients);
 
-      const queryURL = "https://api.edamam.com/search?q=chicken&app_id=08b4fa57&app_key=8531f8a5f6847b98f73396ab5968aed9&nutrients%5BFE%5D=20%2B"
+      const queryURL = `https://api.edamam.com/search?q=chicken&app_id=08b4fa57&app_key=8531f8a5f6847b98f73396ab5968aed9&nutrients%5B${req.params.nutrients}%5D=20%2B`
 
       axios.get(queryURL).then(function(apiRecipes){
+          console.log(apiRecipes);
+          console.log(apiRecipes.data.hits[0]);
 
-          res.json(apiRecipes.hits);
+         res.json(apiRecipes.data.hits);
         });
       });
 
-  app.post("/api/recipes", function(req,res){
+  router.post("/api/recipes", function(req,res){
       
     
   })
@@ -62,4 +67,5 @@ module.exports = function(app) {
 //     });
 //   });
 
-};
+
+module.exports = router;
