@@ -26,7 +26,7 @@ const axios = require('axios');
       axios.get(queryURL).then(function(apiRecipes){
           console.log(apiRecipes);
           console.log(apiRecipes.data.hits[0]);
-
+          
          res.json(apiRecipes.data.hits);
         });
       });
