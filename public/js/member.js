@@ -29,13 +29,13 @@ $(document).ready(function () {
     // console.log($('#nutrientInputGroup')[0].value);
     const nutrientApiCode = $('#nutrientInputGroup')[0].value;
 
+    //This code runs a get request to our api with the value of the selected nutrient sent as a parameter in the url
     $.get(`/api/nutrients/${nutrientApiCode}`).then(function (data) {
-      console.log(data);
 
+      //These variables are declared outside of the for loop so the recipes in the delivered array can be rendered to the page
       const allRecipesDiv = $('#recipesDiv');
       let count = 0;
       let rowDiv = $('<div>').attr({ "class": "row m-3" });
-
 
       for (let recipe of data) {
 
@@ -74,9 +74,12 @@ $(document).ready(function () {
           cardLink.text("See the recipe at its source");
           cardBody.append(cardLink);
 
+          //The image and cardbody are append to the bootstrap card
           outerCardDiv.append(imgDiv);
           outerCardDiv.append(cardBody);
 
+        //The set of if else statements below are set-up to render the right amount of cards into the cols
+        //This is to maintain responsiveness and spacing of the web page
         if (count < 3) {
           colDiv.append(outerCardDiv);
           rowDiv.append(colDiv);
@@ -94,7 +97,6 @@ $(document).ready(function () {
         allRecipesDiv.append(rowDiv);
       }
     })
-
   })
 
 
