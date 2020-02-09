@@ -2,13 +2,23 @@
 //https://www.freecodecamp.org/news/heres-how-you-can-actually-use-node-environment-variables-8fdf98f53a0a/
 require('dotenv').config();
 
+//Require npms
 const express = require('express');
 const session = require("express-session");
-const db = require('./models');
-
-const passport = require("./config/passport");
+const exphbs = require('express-handlebars');
 
 const PORT = process.env.PORT || process.env.MY_PORT;
+
+// Require the entire contents of model folders.  Grabbing the tables created.  This is important for sequelize functionality
+const db = require('./models');
+
+// Requiring passport.js file in config folder which is used with user authentication
+const passport = require("./config/passport");
+
+//Requiring the html-routes.js file which is used below to render routes for handlebars
+const routes = require('./routes/html-routes.js');
+const routes1 = require('./routes/login-routes.js');
+
 const app = express();
 
 // Creating express app and configuring middleware needed for authentication
@@ -23,9 +33,18 @@ app.use(passport.session());
 
 // Requiring our routes
 //=======================
-require('./routes/nutrients-routes.js')(app);
-require("./routes/html-routes.js")(app);
-require("./routes/login-routes")(app);
+// require('./routes/nutrients-routes.js')(app);
+// require("./routes/html-routes.js")(app);
+// require("./routes/login-routes")(app);
+
+//Handlerbars server code
+//==============================
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+app.use(routes);
+app.use(routes1);
+
 
 //Syncing our sequelize models created in model folder.
 // This line of code also starts our express app
@@ -36,4 +55,3 @@ db.sequelize.sync({force: true}).then(function() {
     });
 });
 
-// {force: true}
