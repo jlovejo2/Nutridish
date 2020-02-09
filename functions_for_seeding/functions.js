@@ -1,6 +1,5 @@
 module.exports = {
 
-
     //custom function used to create an object given the key array and value arrays
     createObj(arr1, arr2, arrKeys) {
 
