@@ -1,0 +1,31 @@
+{{#each recipe}}
+<div class="col-sm text-center">
+    <div class="card m-5 recipe border border-primary" style="">
+        <div class="row no gutters">
+            <div class="col-md-4 align-items-center">
+                <img src={{recipe.image}} class="card-img-mid" alt="Yummy">
+                <a href={{recipe.url}} class="card-link">Click here for how to make this!</a>
+            </div>
+            <div class="col-md-4">
+                <div class="card-body">
+                    <h3 class="card-title">{{recipe.label}}</h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <h5>Ingredients</h5>
+                    {{#each recipe.ingredientLines}}
+                    <li class="list-group-item">{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group list-group-flush">
+                    <h5>Nutritional Data</h5>
+                    {{#each recipe.digest}}
+                    <li class="list-group-item">{{label}} Amount:{{daily}} {{unit}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
