@@ -1,0 +1,25 @@
+<div class="row">
+    {{#each recipe}}
+    <div class="col text-center">
+        <div class="card" style="width: 25rem;">
+            <img src={{recipe.image}} class="card-img-top" alt="Yummy">
+            <div class="card-body">
+                <h5 class="card-title">{{recipe.label}}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                {{#each recipe.ingredientLines}}
+                <li class="list-group-item">{{this}}</li>
+                {{/each}}
+            </ul>
+            {{!-- <ul>
+                        {{#each recipe.digest}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul> --}}
+            <div class="card-body">
+                <a href={{recipe.url}} class="btn btn-primary">Click here for how to make this!</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

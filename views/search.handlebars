@@ -28,27 +28,3 @@
         </button>
     </div>
 </div>
-<div class="row">
-    {{#each recipe}}
-    <div class="col-4 text-center">
-        <div class="card" style="width: 18rem;">
-            <img src={{recipe.image}} class="card-img-top" alt="Yummy">
-            <div class="card-body">
-                <h5 class="card-title">{{recipe.label}}</h5>
-
-                <ul>
-                    {{#each recipe.ingredientLines}}
-                    <li>{{this}}</li>
-                    {{/each}}
-                    <ul>
-                        {{!-- <ul>
-                        {{#each recipe.digest}}
-                        <li>{{this}}</li>
-                        {{/each}}
-                    <ul> --}}
-                        <a href={{recipe.url}} class="btn btn-primary">Click here for how to make this!</a>
-            </div>
-        </div>
-    </div>
-    {{/each}}
-</div>

@@ -24,7 +24,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
   
   router.get("/sign-up", function(req, res) {
 
-    res.render('signup', {'layou':'main.handlebars'});
+    res.render('signup', {'layout':'main.handlebars'});
   });
 
 

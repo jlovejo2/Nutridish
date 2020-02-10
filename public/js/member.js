@@ -11,7 +11,7 @@ $(document).ready(function () {
   });
 
   //This runs a get request when the page is rendered to place the nutrients in nutrient table as options in the pulldown menu
-  $.ajax("/api/nutrients", {
+  $.ajax("/api/nutrientCodes", {
     type: "GET"
   }).then(function (data) {
     console.log(data);
@@ -32,12 +32,24 @@ $(document).ready(function () {
 
     // console.log($('#nutrientInputGroup')[0].value);
     const nutrientApiCode = $('#nutrientInputGroup')[0].value;
-
+    console.log('onlclick')
     //This code runs a get request to our api with the value of the selected nutrient sent as a parameter in the url
     $.ajax("/api/nutrients/" + nutrientApiCode, {
       type: "GET",
     }).then(function (data) {
+      
+      console.log('got response')
       console.log(data);
+
+      $('#recipesDiv').html(data);
+
+      // console.log(data);
+
+      // Handlebars.compile(data);
+
+    })
+  })
+
 
 
       // //These variables are declared outside of the for loop so the recipes in the delivered array can be rendered to the page
@@ -105,10 +117,6 @@ $(document).ready(function () {
       //   }
       //   allRecipesDiv.append(rowDiv);
       // }
-    })
-  })
-
-
 
 
 
