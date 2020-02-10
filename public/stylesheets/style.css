@@ -30,3 +30,8 @@ footer {
 .nav-wrapper {
 	background-image: url("/public/images/foodheader.jpg");
 }
+
+.recipe {
+	background-color: rgba(rgb(23, 201, 23)) !important;
+}
+

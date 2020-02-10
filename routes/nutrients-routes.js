@@ -26,7 +26,7 @@ router.get("/api/nutrients/:nutrients", function (req, res) {
 
   axios.get(queryURL).then(function (apiRecipes) {
     console.log('in axios');
- 
+    console.log(apiRecipes.data.hits);
     const recipes = {
       layout: false,
       recipe: apiRecipes.data.hits
