@@ -1,6 +1,11 @@
+// Handlebars.registerHelper("formatRecipe", function ())
+
+
+
 $(document).ready(function () {
 
   const searchButton = $('#searchButton');
+  const saveRecipeButton = $('.saveRecipe');
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -27,7 +32,7 @@ $(document).ready(function () {
 
   })
 
-  //This code starts the click event on the search button
+  //This code starts the click event listener on the search button
   searchButton.on("click", function (event) {
 
     // console.log($('#nutrientInputGroup')[0].value);
@@ -39,19 +44,32 @@ $(document).ready(function () {
     }).then(function (data) {
       
       console.log('got response')
-      console.log(data);
-
-      $('#recipesDiv').html(data);
-
       // console.log(data);
 
-      // Handlebars.compile(data);
-
+      $('#recipesDiv').html(data);
     })
+  })
+
+  // $('#recipesDiv').on("click", function(event){
+  //   console.log(event);
+  // })
+  
+  //This code starts the click event listener 
+  $('#recipesDiv').on("click", function (event) {
+
+    // if ()
+     console.log(event);
+  
   })
 
 
 
+
+//___________Saved code_____________
+//______________________________
+
+  //Javascript code for rendering recipes to divs
+  
       // //These variables are declared outside of the for loop so the recipes in the delivered array can be rendered to the page
       // const allRecipesDiv = $('#recipesDiv');
       // let count = 0;

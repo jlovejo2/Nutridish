@@ -37,8 +37,9 @@ router.get("/api/nutrients/:nutrients", function (req, res) {
       if(err) {
         throw err
       } else {
+        
       res.send(html);
-      console.log(html);
+      // console.log(html);
       }
     });
 
