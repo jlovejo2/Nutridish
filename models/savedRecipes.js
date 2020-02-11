@@ -1,14 +1,13 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     //This lien of code uses sequelize to begin the defining of a table for the database.  
     //Table name is "Nutrients"
     const Recipes = sequelize.define("Recipes", {
         //Below lines of code are defining the columns in Nutrients table
-        searchQuery: DataTypes.TEXT,
         recipeLabel: DataTypes.STRING,
-        recipeUrl: DataTypes.STRING, 
+        recipeUrl: DataTypes.STRING,
         recipeImg: DataTypes.STRING,
-        recipeIngredients: DataTypes.TEXT,
-        recipeNutritionalData: DataTypes.TEXT,
+        recipeIngredients: DataTypes.JSON,
+        recipeNutritionalData: DataTypes.JSON,
         createdAt: {
             //code aid from from yan
             //This column had to be made null because sequelize automatically creates this column on user input
@@ -20,19 +19,29 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.DATE(),
             notNull: true
         }
-        
+
 
 
     })
 
-    
 
-    Recipes.associate = function(models) {
+
+    Recipes.associate = function (models) {
         // Associating Author with Posts
         // When an Author is deleted, also delete any associated Posts
         Recipes.belongsToMany(models.User, {
-          through: 'user_Recipes'
+            through: 'user_Recipes'
         });
-      };
+    };
+
+    Recipes.associate = function (models) {
+        // Associating Author with Posts
+        // When an Author is deleted, also delete any associated Posts
+        Recipes.belongsToMany(models.Searches, {
+            through: 'Searches_Recipes'
+        });
+        
+    };
+
     return Recipes;
 };
