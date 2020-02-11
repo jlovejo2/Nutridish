@@ -44,7 +44,7 @@ router.post("/api/nutrients/:nutrients", function (req, res) {
 
     db.Recipes.bulkCreate(createArr)
       .then(function () {
-        db.Recipes.findAll({ where: {searchQuery = queryURL} })
+        // db.Recipes.findAll({ where: {searchQuery = queryURL} })
         res.render('recipes', { layout: false, recipe: recipesArr });
       })
       //   .catch(function(err) {
