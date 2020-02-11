@@ -1,5 +1,3 @@
-// Handlebars.registerHelper("formatRecipe", function ())
-
 
 
 $(document).ready(function () {
@@ -40,12 +38,13 @@ $(document).ready(function () {
     console.log('onlclick')
     //This code runs a get request to our api with the value of the selected nutrient sent as a parameter in the url
     $.ajax("/api/nutrients/" + nutrientApiCode, {
-      type: "GET",
+      type: "get",
     }).then(function (data) {
       
       console.log('got response')
       // console.log(data);
 
+      // window.location.href = data.trim();
       $('#recipesDiv').html(data);
     })
   })
@@ -56,10 +55,12 @@ $(document).ready(function () {
   
   //This code starts the click event listener 
   $('#recipesDiv').on("click", function (event) {
-
-    // if ()
-     console.log(event);
-  
+    console.log(event);
+    if (event.target.className.includes("saveRecipe")){
+    console.log("found it!");
+    // JSON.parse(event.target.dataset.recipe);
+    console.log(event.target.outerHTML.data());
+    }
   })
 
 
