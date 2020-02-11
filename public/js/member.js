@@ -38,7 +38,7 @@ $(document).ready(function () {
     console.log('onlclick')
     //This code runs a get request to our api with the value of the selected nutrient sent as a parameter in the url
     $.ajax("/api/nutrients/" + nutrientApiCode, {
-      type: "get",
+      type: "post",
     }).then(function (data) {
       
       console.log('got response')

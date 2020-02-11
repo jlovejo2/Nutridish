@@ -3,11 +3,12 @@ module.exports = function(sequelize, DataTypes) {
     //Table name is "Nutrients"
     const Recipes = sequelize.define("Recipes", {
         //Below lines of code are defining the columns in Nutrients table
+        searchQuery: DataTypes.TEXT,
         recipeLabel: DataTypes.STRING,
         recipeUrl: DataTypes.STRING, 
         recipeImg: DataTypes.STRING,
-        recipeIngredients: DataTypes.STRING,
-        recipeNutrionalData: DataTypes.STRING,
+        recipeIngredients: DataTypes.TEXT,
+        recipeNutritionalData: DataTypes.TEXT,
         createdAt: {
             //code aid from from yan
             //This column had to be made null because sequelize automatically creates this column on user input
@@ -20,7 +21,11 @@ module.exports = function(sequelize, DataTypes) {
             notNull: true
         }
         
+
+
     })
+
+    
 
     Recipes.associate = function(models) {
         // Associating Author with Posts
