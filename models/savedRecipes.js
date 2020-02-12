@@ -3,11 +3,11 @@ module.exports = function (sequelize, DataTypes) {
     //Table name is "Nutrients"
     const Recipes = sequelize.define("Recipes", {
         //Below lines of code are defining the columns in Nutrients table
-        recipeLabel: DataTypes.STRING,
-        recipeUrl: DataTypes.STRING,
-        recipeImg: DataTypes.STRING,
-        recipeIngredients: DataTypes.JSON,
-        recipeNutritionalData: DataTypes.JSON,
+        label: DataTypes.STRING,
+        url: DataTypes.STRING,
+        img: DataTypes.STRING,
+        ingredientLines: DataTypes.JSON,
+        digest: DataTypes.JSON,
         createdAt: {
             //code aid from from yan
             //This column had to be made null because sequelize automatically creates this column on user input
@@ -21,7 +21,6 @@ module.exports = function (sequelize, DataTypes) {
         }
 
 
-
     })
 
 
@@ -30,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
         // Associating Author with Posts
         // When an Author is deleted, also delete any associated Posts
         Recipes.belongsToMany(models.User, {
-            through: 'user_Recipes'
+            through: 'user_recipes'
         });
     };
 
@@ -39,7 +38,7 @@ module.exports = function (sequelize, DataTypes) {
         // When an Author is deleted, also delete any associated Posts
         Recipes.belongsToMany(models.Searches, {
             through: 'Searches_Recipes'
-        });
+        }); 
         
     };
 

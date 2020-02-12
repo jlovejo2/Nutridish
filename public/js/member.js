@@ -37,16 +37,7 @@ $(document).ready(function () {
     const nutrientApiCode = $('#nutrientInputGroup')[0].value;
     console.log('onlclick')
     //This code runs a get request to our api with the value of the selected nutrient sent as a parameter in the url
-    $.ajax("/api/nutrients/" + nutrientApiCode, {
-      type: "post",
-    }).then(function (data) {
-      
-      console.log('got response')
-      // console.log(data);
-
-      // window.location.href = data.trim();
-      $('#recipesDiv').html(data);
-    })
+    window.location.href = "/api/nutrients/" + nutrientApiCode
   })
 
   // $('#recipesDiv').on("click", function(event){
