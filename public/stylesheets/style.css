@@ -15,7 +15,7 @@ body {
   font-size: 75px;
 	position: absolute;
 	z-index: 1000;
-	top: 600px;
+	top: 350px;
 	left: 700px;
 }
 
@@ -33,5 +33,9 @@ footer {
 
 .navbar {
 	background-image: url(/images/foodheader.jpg);
-	height: 400px;
+	height: 150px;
+	flex-wrap: inherit;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
