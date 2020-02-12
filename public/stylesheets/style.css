@@ -39,3 +39,26 @@ footer {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+/* .card-body {
+
+} */
+
+.row {
+	background-image: url(/images/wood_pattern.png);
+	display: inline;
+}
+
+.list-group-item {
+	background-image: url(/images/purty_wood.png);
+}
+
+/* .card-img-mid {
+	max-height: 40rem;
+	width: 100%;
+	margin-top: 20px;
+} */
+
+.btn {
+	background-color: grey;
+}
