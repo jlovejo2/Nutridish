@@ -10,14 +10,23 @@ body {
   background-image: url(/images/wood_pattern.png);
 }
 
-.title {
-  color: snow;
-  font-size: 75px;
+
+
+.title{
+	color: white;
+	text-align: center;
+	font-size: 60px;
+	font-family: 'Comfortaa', cursive;
+	font-weight: 700 !important;
 	position: absolute;
 	z-index: 1000;
 	top: 350px;
 	left: 700px;
-}
+  }
+
+.b-green{
+	  color: rgb(37, 187, 37);
+  }
 
 footer {
 	position: fixed;
