@@ -1,17 +1,41 @@
 form.signup,
 form.login {
   margin-top: 50px;
-  background-color: green;
   color: white;
+  border-radius: 8px;
+  background: green;
 }
 
 body { 
-  background-image: url(/public/images/country-quilt.png);
+  background-image: url(/images/wood_pattern.png);
 }
 
 .title {
-  color: green;
-  text-align: center;
-  font-size: 60px;
+  color: snow;
+  font-size: 75px;
+	position: absolute;
+	z-index: 1000;
+	top: 350px;
+	left: 700px;
 }
 
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #546e7a;
+	color: white;
+	text-align: center;
+	text-shadow: ivory;
+	text-size-adjust: 15px;
+}
+
+.navbar {
+	background-image: url(/images/foodheader.jpg);
+	height: 150px;
+	flex-wrap: inherit;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

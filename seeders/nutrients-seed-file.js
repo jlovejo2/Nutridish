@@ -1,5 +1,5 @@
 'use strict';
-const nutrientsData = require('../nutrientObj')
+const nutrientsData = require('../functions_for_seeding/nutrientObj')
 /*got the idea of this code from https://gist.github.com/vapurrmaid/a111bf3fc0224751cb2f76532aac2465*/
 /*it is a file for seeder code that can be run from command terminal to seed database */
 module.exports = {
