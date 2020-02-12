@@ -56,7 +56,6 @@ footer {
 
 .row {
 	background-image: url(/images/wood_pattern.png);
-	display: inline;
 }
 
 .list-group-item {
@@ -72,3 +71,4 @@ footer {
 .btn {
 	background-color: grey;
 }
+
