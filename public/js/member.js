@@ -54,7 +54,7 @@ $(document).ready(function () {
   $('#recipesDiv').on("click", function (event) {
 
     if (event.target.className.includes("saveRecipe")) {
-
+      console.log(event);
       const userEmail2 = $('#recipesDiv').data().useremail;
 
       const selectedRecipeId = $('.saveRecipe').data().recipeid;
