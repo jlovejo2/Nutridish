@@ -1,0 +1,44 @@
+{{#each recipe}}
+<div class="col-sm text-center">
+    <div class="card m-5" style="">
+        <div class="row no gutters">
+            <div class="col-md-12 mt-2">
+                {{!-- <img src={{recipe.image}} class="card-img-mid" alt="Yummy"> --}}
+                <a href={{url}} target="_blank" class="card-link"><img src={{img}} class="card-img-mid" alt="Yummy"></a>
+                <button class="btn btn-primary btn-sm saveRecipe" type="submit">Click to Save Recipe</button>
+            </div>
+            <div class="col-md-12">
+                <div class="card-body">
+                    <h3 class="card-title">{{label}}</h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <h5>Ingredients</h5>
+                    {{#each ingredientLines}}
+                    <li class="list-group-item">{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header mx-auto" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#{{label}}"
+                                aria-expanded="true" aria-controls="{{label}}">
+                                Nutritional Data
+                            </button>
+                            <div id="{{label}}" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion">
+                                <div class="card-body">
+                                    {{#each digest}}
+                                    <li class="list-group-item">{{label}} Amount:{{daily}} {{unit}}</li>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {{/each}}

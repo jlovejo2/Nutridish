@@ -1,11 +1,15 @@
 $(document).ready(function() {
     // Getting references to our form and inputs
-    var loginForm = $("form.login");
-    var emailInput = $("input#email-input");
-    var passwordInput = $("input#password-input");
-  
+    const loginForm = $("form.login");
+    const emailInput = $("input#email-input");
+    const passwordInput = $("input#password-input");
+
+    //jquery const used to created listener for button on no login found modal
+    const modalRedirectSignup = $('#modalSignUpButton');
+
     // When the form is submitted, we validate there's an email and password entered
     loginForm.on("submit", function(event) {
+      console.log('entered listener');
       event.preventDefault();
       var userData = {
         email: emailInput.val().trim(),
@@ -22,18 +26,35 @@ $(document).ready(function() {
       passwordInput.val("");
     });
   
-    // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+    //start listener for modal redirect to signup button
+    // modalRedirectSignup.on("click", function(event){
+    //   res.render('signup');
+    // })
+
+
+    //Functions to be called below this line
+    //_______________________________________________
+
+    // loginUser does a post to our "api/login" route and if successful, redirects us to the members page
     function loginUser(email, password) {
+      console.log("entered login user function");
       $.post("/api/login", {
         email: email,
         password: password
       })
-        .then(function() {
-          window.location.replace("/members");
+        .then(function(){
+          console.log('password found')
+          window.location.replace('/members');
+          // res.render("search");
           // If there's an error, log the error
-        })
-        .catch(function(err) {
+        }).catch(function(err) {
           console.log(err);
+          console.log('no login')
+
+          // $('.noLogin').modal('show');
+          //this line of code grabs the modal div and opens it
+          $("#noLoginFound").modal('show');
+
         });
     }
   });
