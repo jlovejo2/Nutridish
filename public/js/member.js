@@ -57,8 +57,9 @@ $(document).ready(function () {
       console.log(event);
       const userEmail2 = $('#recipesDiv').data().useremail;
 
-      const selectedRecipeId = $('.saveRecipe').data().recipeid;
+      const selectedRecipeId = event.target.dataset.recipeid;
       console.log("found it!");
+      console.log(selectedRecipeId);
 
       $.ajax("/saveRecipe/" + userEmail2 + "/" + selectedRecipeId, {
         type: 'put'
