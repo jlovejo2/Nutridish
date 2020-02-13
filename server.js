@@ -40,9 +40,11 @@ app.use(passport.session());
 
 //Handlerbars server code
 //==============================
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+var handlebars = require('./helpers/handlebars.js')(exphbs)
+app.engine('handlebars', handlebars.engine );
 app.set('view engine', 'handlebars');
 
+// exphbs({ defaultLayout: 'main', helpers: require("./helpers/handlebars.js").helpers})
 app.use(routes);
 app.use(routes1);
 app.use(routes2);
@@ -51,7 +53,7 @@ app.use(routes2);
 //Syncing our sequelize models created in model folder.
 // This line of code also starts our express app
 //==============================
-db.sequelize.sync().then(function() {
+db.sequelize.sync({force: true}).then(function() {
     app.listen(PORT, function() {
         console.log("Listening on port %s", PORT)
     });

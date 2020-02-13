@@ -1,6 +1,9 @@
+
+
 $(document).ready(function () {
 
   const searchButton = $('#searchButton');
+  const saveRecipeButton = $('.saveRecipe');
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -27,31 +30,38 @@ $(document).ready(function () {
 
   })
 
-  //This code starts the click event on the search button
+  //This code starts the click event listener on the search button
   searchButton.on("click", function (event) {
 
     // console.log($('#nutrientInputGroup')[0].value);
     const nutrientApiCode = $('#nutrientInputGroup')[0].value;
     console.log('onlclick')
     //This code runs a get request to our api with the value of the selected nutrient sent as a parameter in the url
-    $.ajax("/api/nutrients/" + nutrientApiCode, {
-      type: "GET",
-    }).then(function (data) {
-      
-      console.log('got response')
-      console.log(data);
+    window.location.href = "/api/nutrients/" + nutrientApiCode
+  })
 
-      $('#recipesDiv').html(data);
-
-      // console.log(data);
-
-      // Handlebars.compile(data);
-
-    })
+  // $('#recipesDiv').on("click", function(event){
+  //   console.log(event);
+  // })
+  
+  //This code starts the click event listener 
+  $('#recipesDiv').on("click", function (event) {
+    console.log(event);
+    if (event.target.className.includes("saveRecipe")){
+    console.log("found it!");
+    // JSON.parse(event.target.dataset.recipe);
+    console.log(event.target.outerHTML.data());
+    }
   })
 
 
 
+
+//___________Saved code_____________
+//______________________________
+
+  //Javascript code for rendering recipes to divs
+  
       // //These variables are declared outside of the for loop so the recipes in the delivered array can be rendered to the page
       // const allRecipesDiv = $('#recipesDiv');
       // let count = 0;

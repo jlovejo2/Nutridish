@@ -42,19 +42,18 @@ $(document).ready(function() {
         email: email,
         password: password
       })
-        .then(function(resp) {
+        .then(function(){
           console.log('password found')
           window.location.replace('/members');
           // res.render("search");
           // If there's an error, log the error
-        })
-        .catch(function(err) {
+        }).catch(function(err) {
           console.log(err);
           console.log('no login')
 
-          $('.noLogin').modal('show');
+          // $('.noLogin').modal('show');
           //this line of code grabs the modal div and opens it
-          $("#noLoginFound").modal('open');
+          $("#noLoginFound").modal('show');
 
         });
     }
