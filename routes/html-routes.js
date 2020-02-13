@@ -41,7 +41,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
   // // If a user who is not logged in tries to access this route they will be redirected to the signup page
   router.get("/members", isAuthenticated, function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/members.html"));
-    res.render('search');
+    res.render('search', {'layout': 'main.handlebars'});
   });
 
 

@@ -84,7 +84,7 @@ router.get("/api/nutrients/:nutrients", function (req, res) {
 
               //Now that recipes have been saved to database they can be rendered into a html string with handlebars
               //Then send back to the frontend
-              res.render('apiRecipes', { recipe: recipesApiArr });
+              res.render('apiRecipes', { 'layout': 'main.handlebars', recipe: recipesApiArr });
             }).catch(error => {
               console.error(error)
             });
@@ -105,7 +105,7 @@ router.get("/api/nutrients/:nutrients", function (req, res) {
         console.log(recipeData);
 
         //The handles bars for recipes from database is slightly different because of format of api object
-        res.render('recipes', { recipe: recipeData });
+        res.render('recipes', { 'layout': 'main.handlebars', recipe: recipeData });
         
       })
       }
