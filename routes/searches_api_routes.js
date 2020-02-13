@@ -7,7 +7,7 @@ const router = express.Router();
 const db = require('../models');
 
 
-router.get("/api/searches", function(req, res) {
+router.get("/searches", function(req, res) {
     
     db.Searches.findAll({}).then(function(db) {
       res.json(db);
