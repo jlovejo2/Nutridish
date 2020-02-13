@@ -11,7 +11,11 @@ $(document).ready(function () {
     type: "GET"
   }).then(function (data) {
     $(".member-name").text(data.email);
+    $("#recipesDiv").attr('data-useremail', data.email);
   });
+
+
+  
 
   //This runs a get request when the page is rendered to place the nutrients in nutrient table as options in the pulldown menu
   $.ajax("/api/nutrientCodes", {
@@ -33,26 +37,38 @@ $(document).ready(function () {
   //This code starts the click event listener on the search button
   searchButton.on("click", function (event) {
 
+    const userEmail1 = $(".member-name").html()
+
     // console.log($('#nutrientInputGroup')[0].value);
     const nutrientApiCode = $('#nutrientInputGroup')[0].value;
     console.log('onlclick')
     //This code runs a get request to our api with the value of the selected nutrient sent as a parameter in the url
-    window.location.href = "/api/nutrients/" + nutrientApiCode
+    window.location.href = "/api/nutrients/" + userEmail1 + "/" + nutrientApiCode
   })
 
   // $('#recipesDiv').on("click", function(event){
   //   console.log(event);
   // })
-  
+
   //This code starts the click event listener 
   $('#recipesDiv').on("click", function (event) {
-    console.log(event);
-    if (event.target.className.includes("saveRecipe")){
-    console.log("found it!");
-    // JSON.parse(event.target.dataset.recipe);
-    console.log(event.target.outerHTML.data());
+
+    if (event.target.className.includes("saveRecipe")) {
+
+      const userEmail2 = $('#recipesDiv').data().useremail;
+
+      const selectedRecipeId = $('.saveRecipe').data().recipeid;
+      console.log("found it!");
+
+      $.ajax("/saveRecipe/" + userEmail2 + "/" + selectedRecipeId, {
+        type: 'put'
+    }).then(function (){
+      console.log('recipe Saved!!');
+    })
+
     }
   })
+});
 
 
 
@@ -61,7 +77,7 @@ $(document).ready(function () {
 //______________________________
 
   //Javascript code for rendering recipes to divs
-  
+
       // //These variables are declared outside of the for loop so the recipes in the delivered array can be rendered to the page
       // const allRecipesDiv = $('#recipesDiv');
       // let count = 0;
@@ -126,9 +142,4 @@ $(document).ready(function () {
       //     allRecipesDiv.append(rowDiv);
       //   }
       //   allRecipesDiv.append(rowDiv);
-      // }
-
-
-
-
-});
+      // 
