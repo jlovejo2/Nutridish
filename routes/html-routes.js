@@ -45,4 +45,8 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
   });
 
 
+  // router.get("/*", function(req, res){
+  //   res.redirect("/login");
+  // })
+
   module.exports = router;
