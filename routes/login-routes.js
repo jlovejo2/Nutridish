@@ -18,7 +18,8 @@ router.post('/api/login', passport.authenticate('local'), function(req, res) {
   res.json(req.user);
 });
 
-// Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+// Route for signing up a user. The user's password is automatically hashed and stored securely thanks to bscrypt
+//This code also adds all the other user information to our database in the User table.
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 // otherwise send back an error
 router.post('/api/signup', function(req, res) {
