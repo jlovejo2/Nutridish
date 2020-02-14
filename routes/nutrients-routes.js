@@ -31,7 +31,7 @@ router.get('/api/nutrients/:userEmail/:nutrients/:healthCode', function (req, re
     req.params.userEmail + 'has searched for ' + req.params.nutrients + ' & ' + req.params.healthCode
   );
 
-  // const userEmail = req.params.userEmail;
+  // const userEmail = req.params
 
   const queryURL = `https://api.edamam.com/search?q=chicken&app_id=08b4fa57&app_key=8531f8a5f6847b98f73396ab5968aed9&nutrients%5B${req.params.nutrients}%5D=20%2B&health=${req.params.healthCode}`;
 
@@ -43,7 +43,7 @@ router.get('/api/nutrients/:userEmail/:nutrients/:healthCode', function (req, re
     //If SQL query doesn't not find a search
     if (!dbSearchExist) {
       console.log('if');
-
+      //The search is saved into our database as a new search
       db.Searches.create({
         searchQuery: queryURL,
         NutrientCode: req.params.nutrients,
@@ -51,7 +51,7 @@ router.get('/api/nutrients/:userEmail/:nutrients/:healthCode', function (req, re
       }).then(function (newSearch) {
         console.log('past search create');
 
-        //Perform an axios
+        //Perform an axios call to Edamam based on query url specified above
         axios.get(queryURL).then(function (apiRecipes) {
           //The resp obj from the api has a setup that requires to navigate to .data then .hits inorder to get the array of recpe objects
           const recipesApiArr = apiRecipes.data.hits;
