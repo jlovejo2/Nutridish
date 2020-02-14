@@ -53,10 +53,11 @@ app.use(routes2);
 //Syncing our sequelize models created in model folder.
 // This line of code also starts our express app
 //==============================
-db.sequelize.sync({alter: true}).then(function() {
+db.sequelize.sync({}).then(function() {
     app.listen(PORT, function() {
         console.log("Listening on port %s", PORT)
     });
 });
 
 // {force: true}
+// {alter: true}
