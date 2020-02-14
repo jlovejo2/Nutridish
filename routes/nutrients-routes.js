@@ -15,15 +15,25 @@ router.get('/api/nutrientCodes', function(req, res) {
     res.json(dbNutrients);
   });
 });
+//This route will return all the health options available in the nutrients table
+router.get('/api/healthCodes', function (req, res) {
 
-router.get('/api/nutrients/:userEmail/:nutrients', function(req, res) {
+  db.Health.findAll({attributes:['healthApiCode']}).then(function (dbHealth) {
+
+    console.log('inside get response');
+
+    res.json(dbHealth);
+  });
+});
+
+router.get('/api/nutrients/:userEmail/:nutrients/:healthCode', function(req, res) {
   console.log(
-    req.params.userEmail + 'has searched for ' + req.params.nutrients
+    req.params.userEmail + 'has searched for ' + req.params.nutrients + ' & ' + req.params.healthCode
   );
 
   // const userEmail = req.params.userEmail;
 
-  const queryURL = `https://api.edamam.com/search?q=chicken&app_id=08b4fa57&app_key=8531f8a5f6847b98f73396ab5968aed9&nutrients%5B${req.params.nutrients}%5D=20%2B`;
+  const queryURL = `https://api.edamam.com/search?q=chicken&app_id=08b4fa57&app_key=8531f8a5f6847b98f73396ab5968aed9&nutrients%5B${req.params.nutrients}%5D=20%2B&health=${req.params.healthCode}`;
 
   db.Searches.findOne({
     where: {
