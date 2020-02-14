@@ -4,7 +4,8 @@
         <div class="row no gutters">
             <div class="col-md-12 mt-2">
                 {{!-- <img src={{recipe.image}} class="card-img-mid" alt="Yummy"> --}}
-                <a href={{recipe.url}} target="_blank" class="card-link"><img src={{recipe.image}} class="card-img-mid" alt="Yummy"></a>
+                <a href={{recipe.url}} target="_blank" class="card-link"><img src={{recipe.image}} class="card-img-mid"
+                        alt="Yummy"></a>
             </div>
             <div class="col-md-12">
                 <div class="card-body">
@@ -21,7 +22,7 @@
                 <div class="card">
                     <div class="card-header mx-auto" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                            <button class="btn btn-secondary mx-auto" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
                                 Nutritional Data
                             </button>
@@ -43,7 +44,9 @@
                     {{/each}}
                 </ul>
             </div> --}}
-                </div>
+                <button class="btn btn-secondary mx-auto" type="button" id="saveButton">
+                    Save Recipe
+                </button>
             </div>
         </div>
     </div>
