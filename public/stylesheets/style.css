@@ -8,9 +8,13 @@ form.login {
   font-weight:bold; 
 }
 
+html {
+	height: 100%;
+}
+
 body { 
   background-image: url(/images/wood_pattern.png);
-  line-height: 0;
+  /* line-height: 0; */
 }
 
 .navbar {
@@ -76,7 +80,7 @@ footer {
 
 .foodpic {
 	background-image: url(../images/grains.jpg);
-	height: 45px;
+	height: 10%;
 	flex-wrap: inherit;
 	background-position: center;
 	background-repeat: no-repeat;

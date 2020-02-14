@@ -1,7 +1,6 @@
 
 $(document).ready(function () {
 
-  const searchButton = $('#searchButton');
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -44,7 +43,8 @@ $(document).ready(function () {
   });
 
   //This code starts the click event listener on the search button
-  searchButton.on('click', function() {
+  $('#searchButton').on('click', function() {
+
     const userEmail1 = $('.member-name').html();
 
     // console.log($('#nutrientInputGroup')[0].value);
