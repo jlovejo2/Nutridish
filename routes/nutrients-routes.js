@@ -17,6 +17,16 @@ router.get("/api/nutrientCodes", function (req, res) {
     res.json(dbNutrients);
   });
 });
+//This route will return all the health options available in the nutrients table
+router.get("/api/healthCodes", function (req, res) {
+
+  db.Health.findAll({attributes:['healthApiCode']}).then(function (dbHealth) {
+
+    console.log("inside get response");
+
+    res.json(dbHealth);
+  });
+});
 
 router.get("/api/nutrients/:nutrients", function (req, res) {
 

@@ -26,6 +26,21 @@ $(document).ready(function () {
     }
   })
 
+  $.ajax("/api/healthCodes", {
+    type: "GET"
+  }).then(function (data) {
+    console.log(data);
+    const healthSelectDiv = $('#healthInputGroup')
+
+    for (let health of data) {
+      let inputOption = $('<option>').attr({ "class": "health-item" })
+
+      inputOption.attr({ "value": `${health.healthApiCode}` })
+      inputOption.text(health.healthApiCode)
+      healthSelectDiv.append(inputOption);
+    }
+  })
+
   //This code starts the click event on the search button
   searchButton.on("click", function (event) {
 
