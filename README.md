@@ -18,13 +18,13 @@ https://git.heroku.com/nutridish.git
 * [Known Issues With Code](#known-issues-with-code)
 
 ## User Story
-
+* As a user I just found that I am in a need of a boost vitamins and minerals in my diet.  However, I'd really prefer to get these from real food versus pounding a bunch of pills.  So what I need is a place that I can look up recipes by the nutrients in them and then preferably have a way to save them to a list so I don't have to write these down due to my bad memory from lack of vitamins and minerals in my diet.
 
 ## Version 1.0
 * 
 
 ## How To Use
-See the layout of the app below.
+See the layout of the Login page of app below.
 
 *![alt text](/public/assets/images/empty_modal.png "Starting page of App") 
 
@@ -85,4 +85,4 @@ See the layout of the app below.
 
 
 ## Known Issues With Code
-* 
+* One issue with this app is that since our search query does not have a lot of specific parameters in it the same recipe can come back in different searches.  This will result in that recipe getting saved into the database with different ids and different searches.  This is could cause misinformation if code is ever written to search for recipes by label.
