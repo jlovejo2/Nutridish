@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
   const searchButton = $('#searchButton');
+  const saveRecipeButton = $('.saveRecipe');
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -8,7 +9,11 @@ $(document).ready(function () {
     type: "GET"
   }).then(function (data) {
     $(".member-name").text(data.email);
+    $("#recipesDiv").attr('data-useremail', data.email);
   });
+
+
+  
 
   //This runs a get request when the page is rendered to place the nutrients in nutrient table as options in the pulldown menu
   $.ajax("/api/nutrientCodes", {
@@ -41,8 +46,10 @@ $(document).ready(function () {
     }
   })
 
-  //This code starts the click event on the search button
+  //This code starts the click event listener on the search button
   searchButton.on("click", function (event) {
+
+    const userEmail1 = $(".member-name").html()
 
     // console.log($('#nutrientInputGroup')[0].value);
     const nutrientApiCode = $('#nutrientInputGroup')[0].value;
@@ -56,12 +63,28 @@ $(document).ready(function () {
       console.log('got response')
       console.log(data);
 
-      $('#recipesDiv').html(data);
-
-      // console.log(data);
-
-      // Handlebars.compile(data);
-
-    })
+    window.location.href = "/api/nutrients/" + userEmail1 + "/" + nutrientApiCode
   })
 });
+  //This code starts the click event listener 
+  $('#recipesDiv').on("click", function (event) {
+
+    if (event.target.className.includes("saveRecipe")) {
+      console.log(event);
+      const userEmail2 = $('#recipesDiv').data().useremail;
+
+      const selectedRecipeId = event.target.dataset.recipeid;
+      console.log("found it!");
+      console.log(selectedRecipeId);
+
+      $.ajax("/saveRecipe/" + userEmail2 + "/" + selectedRecipeId, {
+        type: 'put'
+    }).then(function (){
+      console.log('recipe Saved!!');
+    })
+
+    }
+  })
+});
+
+

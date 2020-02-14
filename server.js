@@ -40,9 +40,11 @@ app.use(passport.session());
 
 //Handlerbars server code
 //==============================
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+var handlebars = require('./helpers/handlebars.js')(exphbs)
+app.engine('handlebars', handlebars.engine );
 app.set('view engine', 'handlebars');
 
+// exphbs({ defaultLayout: 'main', helpers: require("./helpers/handlebars.js").helpers})
 app.use(routes);
 app.use(routes1);
 app.use(routes2);
