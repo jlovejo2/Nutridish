@@ -6,7 +6,7 @@ $(document).ready(function () {
   // and updates the HTML on the page
   $.ajax('/api/user_data', {
     type: 'GET'
-  }).then(function(data) {
+  }).then(function (data) {
     $('.member-name').text(data.email);
     $('#recipesDiv').attr('data-useremail', data.email);
   });
@@ -14,7 +14,7 @@ $(document).ready(function () {
   //This runs a get request when the page is rendered to place the nutrients in nutrient table as options in the pulldown menu
   $.ajax('/api/nutrientCodes', {
     type: 'GET'
-  }).then(function(data) {
+  }).then(function (data) {
     console.log(data);
     const nutrientSelectDiv = $('#nutrientInputGroup');
 
@@ -43,7 +43,7 @@ $(document).ready(function () {
   });
 
   //This code starts the click event listener on the search button
-  $('#searchButton').on('click', function() {
+  $('#searchButton').on('click', function () {
 
     const userEmail1 = $('.member-name').html();
 
@@ -56,17 +56,16 @@ $(document).ready(function () {
       '/api/nutrients/' + userEmail1 + '/' + nutrientApiCode + '/' + healthApiCode;
   });
 
-  // $('#recipesDiv').on("click", function(event){
-  //   console.log(event);
-  // })
-
   //This code starts the click event listener
-  $('#recipesDiv').on('click', function(event) {
+  $('#recipesDiv').on('click', function (event) {
 
+    //This was placed inside the click event because the info is rendered to the page in an above ajax call.
+    //To ensure the const is not undefined I do not define it until it is needed.
+    const userEmail2 = $('#recipesDiv').data().useremail;
+
+    //This checks for the saveRecipe class to exist on the event that was clicked
+    //If it does the code iniside runs
     if (event.target.className.includes('saveRecipe')) {
-
-      console.log(event);
-      const userEmail2 = $('#recipesDiv').data().useremail;
 
       const selectedRecipeId = event.target.dataset.recipeid;
       console.log('found it!');
@@ -74,10 +73,22 @@ $(document).ready(function () {
 
       $.ajax('/saveRecipe/' + userEmail2 + '/' + selectedRecipeId, {
         type: 'put'
-      }).then(function() {
+      }).then(function () {
         console.log('recipe Saved!!');
       });
     }
+
+    //This was placed in its on click rather than recipes div listener because it may be moved outside the recipes div for front end layout purposes
+    $('#viewSavedRecipes').click(function () {
+
+      console.log('entered view saved recipes onclick');
+
+      const userEmail3 = $('#recipesDiv').data().useremail;
+
+      window.location.href = '/recipes/' + userEmail3;      
+
+    });
+
   });
 });
 
