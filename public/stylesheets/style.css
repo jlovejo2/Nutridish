@@ -1,16 +1,15 @@
 form.signup,
 form.login {
-  margin-top: 20px;
+  margin-top: 30px;
   color: black;
-  border-radius: 15px;
+  border-radius: 25px;
   background-image: url(/images/purty_wood.png);
   display: inline-table;
-  font-weight:bold; 
+  font-weight: bold; 
 }
 
 body { 
   background-image: url(/images/wood_pattern.png);
-  line-height: 0;
 }
 
 .navbar {
