@@ -6,9 +6,3 @@ INSERT INTO health (healthApiCode) VALUES ('vegetarian');
 INSERT INTO health (healthApiCode) VALUES ('sugar-conscious');
 INSERT INTO health (healthApiCode) VALUES ('tree-nut-free');
 INSERT INTO health (healthApiCode) VALUES ('peanut-free');
-
-
-
-
-
-
