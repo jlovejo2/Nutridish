@@ -46,7 +46,8 @@ router.get('/api/nutrients/:userEmail/:nutrients/:healthCode', function (req, re
 
       db.Searches.create({
         searchQuery: queryURL,
-        NutrientCode: req.params.nutrients
+        NutrientCode: req.params.nutrients,
+        HealthApiCode: req.params.healthCode
       }).then(function (newSearch) {
         console.log('past search create');
 

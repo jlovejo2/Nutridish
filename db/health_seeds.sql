@@ -1,30 +1,14 @@
 USE kiwbxw4e3dt7q258;
+/* nutridish_db is for local devlopment */
+INSERT INTO health (healthApiCode) VALUES ('alcohol-free');
+INSERT INTO health (healthApiCode) VALUES ('vegan');
+INSERT INTO health (healthApiCode) VALUES ('vegetarian');
+INSERT INTO health (healthApiCode) VALUES ('sugar-conscious');
+INSERT INTO health (healthApiCode) VALUES ('tree-nut-free');
+INSERT INTO health (healthApiCode) VALUES ('peanut-free');
 
-INSERT INTO Health (HealthApiCode) VALUES ('alcohol-free');
-INSERT INTO Health (HealthApiCode) VALUES ('celery-free');
-INSERT INTO Health (HealthApiCode) VALUES ('crustacean-free');
-INSERT INTO Health (HealthApiCode) VALUES ('dairy-free');
-INSERT INTO Health (HealthApiCode) VALUES ('egg-free');
-INSERT INTO Health (HealthApiCode) VALUES ('fish-free');
-INSERT INTO Health (HealthApiCode) VALUES ('fodmap-free');
-INSERT INTO Health (HealthApiCode) VALUES ('gluten-free');
-INSERT INTO Health (HealthApiCode) VALUES ('keto-friendly');
-INSERT INTO Health (HealthApiCode) VALUES ('kidney-friendly');
-INSERT INTO Health (HealthApiCode) VALUES ('kosher');
-INSERT INTO Health (HealthApiCode) VALUES ('low-potassium');
-INSERT INTO Health (HealthApiCode) VALUES ('lupine-free');
-INSERT INTO Health (HealthApiCode) VALUES ('mustard-free');
-INSERT INTO Health (HealthApiCode) VALUES ('low-fat-abs');
-INSERT INTO Health (HealthApiCode) VALUES ('No-oil-added');
-INSERT INTO Health (HealthApiCode) VALUES ('low-sugar');
-INSERT INTO Health (HealthApiCode) VALUES ('paleo');
-INSERT INTO Health (HealthApiCode) VALUES ('pork-free');
-INSERT INTO Health (HealthApiCode) VALUES ('red-meat-free');
-INSERT INTO Health (HealthApiCode) VALUES ('sesame-free');
-INSERT INTO Health (HealthApiCode) VALUES ('shellfish-free');
-INSERT INTO Health (HealthApiCode) VALUES ('soy-free');
-INSERT INTO Health (HealthApiCode) VALUES ('sugar-conscious');
-INSERT INTO Health (HealthApiCode) VALUES ('tree-nut-free');
-INSERT INTO Health (HealthApiCode) VALUES ('vegan');
-INSERT INTO Health (HealthApiCode) VALUES ('vegetarian');
-INSERT INTO Health (HealthApiCode) VALUES ('wheat-free');
+
+
+
+
+
