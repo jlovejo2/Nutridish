@@ -1,11 +1,14 @@
 {{#each recipe}}
-<div class="col-sm text-center">
+<div class="col-sm-12 text-center">
     <div class="card m-5" style="">
         <div class="row no gutters">
             <div class="col-md-12 mt-2">
                 {{!-- <img src={{recipe.image}} class="card-img-mid" alt="Yummy"> --}}
                 <a href={{url}} target="_blank" class="card-link"><img src={{img}} class="card-img-mid" alt="Yummy"></a>
-                <button class="btn btn-primary btn-sm saveRecipe" type="input" data-recipeId="{{id}}">Click to Save Recipe</button>
+                <div class="row col-sm-12 d-flex justify-content-center">
+                    <button class="btn btn-primary btn-sm saveRecipe" type="input" data-recipeId="{{id}}">Click to Save
+                        Recipe</button>
+                </div>
             </div>
             <div class="col-md-12">
                 <div class="card-body">
@@ -36,12 +39,9 @@
                             </div>
                         </h5>
                     </div>
-                <button class="btn btn-secondary mx-auto" type="button" id="saveButton">
-                    Save Recipe
-                </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    {{/each}}
+{{/each}}
