@@ -10,10 +10,20 @@ form.login {
 
 body { 
   background-image: url(/images/wood_pattern.png);
+  line-height: 0;
 }
 
 .navbar {
 	background-image: url(/images/tileable_wood_texture.png);
+}
+
+.container_search {
+	padding-top: 25px!important;
+	padding-right: 30px;
+	padding-bottom: 50px;
+	padding-left: 80px;
+	display: contents;
+	margin-bottom: 5%!important;
 }
 
 .title{
@@ -102,4 +112,9 @@ footer {
 .input-group-text {
 	background-image: url(/images/purty_wood.png);
 	font-weight:bold; 
+}
+
+.search_data{
+	width: 170px;
+	
 }
