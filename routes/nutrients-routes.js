@@ -15,13 +15,11 @@ router.get('/api/nutrientCodes', function (req, res) {
     res.json(dbNutrients);
   });
 });
-//This route will return all the health options available in the nutrients table
+//This route will return all the health options available in the health table
 router.get('/api/healthCodes', function (req, res) {
 
   db.Health.findAll({ attributes: ['healthApiCode'] }).then(function (dbHealth) {
-
     console.log('inside get response');
-
     res.json(dbHealth);
   });
 });
@@ -181,14 +179,27 @@ router.get('/api/recipes', function (req, res) {
 
 //This is to return all the recipes a user has saved
 router.get('/recipes/:userEmail', function (req, res) {
-  db.User.getRecipes({ where: { email: req.params.userEmail } }).then(function (
-    dbuserRecipes
-  ) {
-    res.json(dbuserRecipes);
+  console.log('user wants saved recipes');
+  db.User.findOne({ where: { email: req.params.userEmail } }).then(function (dbUser) {
+    // console.log(dbUser);
+    dbUser.getRecipes().then(function(dbUserRecipes){
+      // console.log(dbUserRecipes);
+
+      const savedRecipeData = dbUserRecipes.map(Recipe =>
+        Recipe.get({ plain: true })
+      );
+
+      console.log(savedRecipeData);
+
+      res.render('recipes', {
+        layout: 'main.handlebars',
+        recipe: savedRecipeData
+      });
+    });
   });
 });
 
-//This is to return all the searches
+//This is to return all the searches a user has saved
 router.get('/searches/:userEmail', function (req /*, res*/) {
   // eslint-disable-next-line
   db.User.getRecipes({ where: { email: req.params.userEmail } }).then(function () {
