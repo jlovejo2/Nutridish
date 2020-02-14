@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
   Searches.associate = function(models) {
     // Associating Searches with Recipes
     Searches.belongsToMany(models.Recipes, {
-      through: 'searches_recipes'
+      through: 'Searches_Recipes'
     });
   };
 
