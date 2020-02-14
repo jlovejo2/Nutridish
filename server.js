@@ -60,3 +60,4 @@ db.sequelize.sync({}).then(function() {
 });
 
 // {force: true}
+// {alter: true}
