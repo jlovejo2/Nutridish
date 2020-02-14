@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
     User.belongsToMany(models.Recipes, {
-      through: 'user_Recipes'
+      through: 'User_Recipes'
     });
   };
 
