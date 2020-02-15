@@ -48,12 +48,12 @@ $(document).ready(function() {
         // res.render("search");
         // If there's an error, log the error
       })
-      .catch(function(err) {
+      .fail(function(err) {
         console.log(err);
         console.log('no login');
 
-        // $('.noLogin').modal('show');
-        //this line of code grabs the modal div and opens it
+        // // $('.noLogin').modal('show');
+        // //this line of code grabs the modal div and opens it
         $('#noLoginFound').modal('show');
       });
   }
