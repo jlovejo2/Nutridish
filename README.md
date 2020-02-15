@@ -1,10 +1,13 @@
 ## Project_2 Nutridish
 Create an app that allows users to search for recipes that are high in a specific nutrient.  User will then have the ability to save the recipe to their login.
 
-the link to github is shown below:
+The link to PowerPoint presentation in Google Drive is shown below:
+https://drive.google.com/file/d/1ivr52fcFcY4PhnjaaGEi3WDeihRUgTZs/view?usp=sharing
+
+The link to github is shown below:
 https://github.com/jlovejo2/Project_2.git
 
-the link to the functional app is shown below:
+The link to the functional app is shown below:
 https://git.heroku.com/nutridish.git
 
 ## Table of Contents
