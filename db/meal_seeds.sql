@@ -1,6 +1,6 @@
 USE kiwbxw4e3dt7q258;
 
-INSERT INTO mealType (mealTypeApiCode) VALUES ('Breakfast');
-INSERT INTO mealType (mealTypeApiCode) VALUES ('Lunch');
-INSERT INTO mealType (mealTypeApiCode) VALUES ('Dinner');
-INSERT INTO mealType (mealTypeApiCode) VALUES ('Snack');
+INSERT INTO mealTypes (mealTypeApiCode) VALUES ('Breakfast');
+INSERT INTO mealTypes (mealTypeApiCode) VALUES ('Lunch');
+INSERT INTO mealTypes (mealTypeApiCode) VALUES ('Dinner');
+INSERT INTO mealTypes (mealTypeApiCode) VALUES ('Snack');
