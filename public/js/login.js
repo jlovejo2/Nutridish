@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Getting references to our form and inputs
-  const loginForm = $('form.login');
+  const loginForm = $('form.loginNutri');
   const emailInput = $('input#email-input');
   const passwordInput = $('input#password-input');
 
@@ -17,6 +17,7 @@ $(document).ready(function() {
     };
 
     if (!userData.email || !userData.password) {
+      
       return;
     }
 
@@ -47,12 +48,12 @@ $(document).ready(function() {
         // res.render("search");
         // If there's an error, log the error
       })
-      .catch(function(err) {
+      .fail(function(err) {
         console.log(err);
         console.log('no login');
 
-        // $('.noLogin').modal('show');
-        //this line of code grabs the modal div and opens it
+        // // $('.noLogin').modal('show');
+        // //this line of code grabs the modal div and opens it
         $('#noLoginFound').modal('show');
       });
   }
