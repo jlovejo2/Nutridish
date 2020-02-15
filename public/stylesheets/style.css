@@ -9,8 +9,14 @@ form.login {
   text-align: center;
 }
 
+html {
+  position: relative;
+  min-height: 100vh;
+}
+
 body {
   background-image: url(/images/wood_pattern.png);
+  padding-bottom: 3.8rem; 
 }
 
 .navbar {
@@ -64,7 +70,7 @@ body {
 }
 
 footer {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -72,7 +78,7 @@ footer {
 
 .foodpic {
   background-image: url(../images/grains.jpg);
-  height: 45px;
+  height: 50px;
   flex-wrap: inherit;
   background-position: center;
   background-repeat: no-repeat;
@@ -93,7 +99,6 @@ footer {
 }
 
 .card-header {
-  /* justify-content: center!important; */
   background-image: url(/images/wood_pattern.png);
 }
 
