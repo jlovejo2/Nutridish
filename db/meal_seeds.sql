@@ -1,6 +1,7 @@
-USE kiwbxw4e3dt7q258;
+/*USE kiwbxw4e3dt7q258;*/
+USE nutridish_db;
 
-INSERT INTO mealTypes (mealTypeApiCode) VALUES ('balanced');
-INSERT INTO mealTypes (mealTypeApiCode) VALUES ('high-protein');
-INSERT INTO mealTypes (mealTypeApiCode) VALUES ('low-fat');
-INSERT INTO mealTypes (mealTypeApiCode) VALUES ('low-carb');
+INSERT INTO dietTypes (dietTypeCode) VALUES ('balanced');
+INSERT INTO dietTypes (dietTypeCode) VALUES ('high-protein');
+INSERT INTO dietTypes (dietTypeCode) VALUES ('low-fat');
+INSERT INTO dietTypes (dietTypeCode) VALUES ('low-carb');
