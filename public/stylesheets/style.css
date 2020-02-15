@@ -122,5 +122,12 @@ footer {
 }
 
 .loginNutri {
-  width: 400px;
+  width: 350px;
+  margin-top: 1px;
+  color: black;
+  border-radius: 50px;
+  background-image: url(/images/purty_wood.png);
+  display: inline-table;
+  font-weight: bold;
+  text-align: center;
 }
