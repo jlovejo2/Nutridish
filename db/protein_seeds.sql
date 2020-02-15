@@ -1,4 +1,5 @@
-USE kiwbxw4e3dt7q258;
+/*USE kiwbxw4e3dt7q258;*/
+USE nutridish_db;
 
 INSERT INTO proteins (proteinApiCode) VALUES ('Beef');
 INSERT INTO proteins (proteinApiCode) VALUES ('Chicken');

@@ -1,4 +1,5 @@
-USE kiwbxw4e3dt7q258;
+/* USE kiwbxw4e3dt7q258; */
+USE nutridish_db;
 
 INSERT INTO Nutrients (nutrientApiCode, nutrientName) VALUES ('CA', 'calcium');
 INSERT INTO Nutrients (nutrientApiCode, nutrientName) VALUES ('CHOCDF', 'carbs');
@@ -29,3 +30,5 @@ INSERT INTO Nutrients (nutrientApiCode, nutrientName) VALUES ('VITC', 'vitamin C
 INSERT INTO Nutrients (nutrientApiCode, nutrientName) VALUES ('VITD', 'vitamin D');
 INSERT INTO Nutrients (nutrientApiCode, nutrientName) VALUES ('VITK1', 'vitamin K');
 INSERT INTO Nutrients (nutrientApiCode, nutrientName) VALUES ('ZN', 'zinc');
+
+
