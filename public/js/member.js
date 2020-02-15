@@ -42,6 +42,21 @@ $(document).ready(function () {
     }
   });
 
+  $.ajax('/api/proteinCodes', {
+    type: 'GET'
+  }).then(function (data) {
+    console.log(data);
+    const proteinSelectDiv = $('#proteinInputGroup');
+
+    for (let protein of data) {
+      let inputOption = $('<option>').attr({ 'class': 'protein-item' });
+
+      inputOption.attr({ 'value': `${protein.proteinApiCode}` });
+      inputOption.text(protein.proteinApiCode);
+      proteinSelectDiv.append(inputOption);
+    }
+  });
+
   //This code starts the click event listener on the search button
   $('#searchButton').on('click', function() {
 
@@ -50,6 +65,7 @@ $(document).ready(function () {
     // console.log($('#nutrientInputGroup')[0].value);
     const nutrientApiCode = $('#nutrientInputGroup')[0].value;
     const healthApiCode = $('#healthInputGroup')[0].value;
+    const proteinApiCode = $('#proteinInputGroup')[0].value;
     console.log('onlclick');
     //This code runs a get request to our api with the value of the selected nutrient sent as a parameter in the url
     window.location.href =
