@@ -23,15 +23,24 @@ router.get('/api/healthCodes', function (req, res) {
     res.json(dbHealth);
   });
 });
+//This route will return all the protein options available in the protein table
+router.get('/api/proteinCodes', function (req, res) {
 
+  db.Protein.findAll({ attributes: ['proteinApiCode'] }).then(function (dbProtein) {
+    console.log('inside get response');
+    res.json(dbProtein);
+  });
+});
 
 //This route is the biggest aspect of our app and alot is happening in it.
 //Esesentially when the user performs a search we check if the search exist in our database.  If it doesn't we got out to the external api 
 //and bring back the result, create associations between those recipes and that search, and render the recipes to the page.
 //If a search is found in our database then we pull them from our database and render them to the page. 
-router.get('/api/nutrients/:userEmail/:nutrients/:healthCode', function (req, res) {
+
+router.get('/api/nutrients/:userEmail/:nutrients/:healthCode/:proteinCode', function (req, res) {
+
   console.log(
-    req.params.userEmail + 'has searched for ' + req.params.nutrients + ' & ' + req.params.healthCode
+    req.params.userEmail + 'has searched for ' + req.params.nutrients + ' & ' + req.params.healthCode + ' & ' + req.params.proteinCode
   );
 
   // const userEmail = req.params.userEmail;
@@ -53,7 +62,8 @@ router.get('/api/nutrients/:userEmail/:nutrients/:healthCode', function (req, re
       db.Searches.create({
         searchQuery: queryURL,
         NutrientCode: req.params.nutrients,
-        HealthApiCode: req.params.healthCode
+        HealthApiCode: req.params.healthCode,
+        ProteinApiCode: req.params.proteinCode
       }).then(function (newSearch) {
         console.log('past search create');
 
@@ -216,6 +226,5 @@ router.get('/searches/:userEmail', function (req /*, res*/) {
 });
 
 //This is to return all recipes for the search
-
 module.exports = router;
 
