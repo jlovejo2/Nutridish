@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Getting references to our form and inputs
-  const loginForm = $('form.login');
+  const loginForm = $('form.loginNutri');
   const emailInput = $('input#email-input');
   const passwordInput = $('input#password-input');
 
@@ -17,6 +17,7 @@ $(document).ready(function() {
     };
 
     if (!userData.email || !userData.password) {
+      
       return;
     }
 

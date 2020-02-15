@@ -32,27 +32,27 @@ router.get('/api/proteinCodes', function (req, res) {
   });
 });
 //This route will return all the mealType options available in the mealType table
-router.get('/api/mealTypeCodes', function (req, res) {
+router.get('/api/dietTypeCodes', function (req, res) {
 
-  db.MealType.findAll({ attributes: ['mealTypeApiCode'] }).then(function (dbMealType) {
+  db.DietType.findAll({ attributes: ['dietTypeCode'] }).then(function (dbDietType) {
     console.log('inside get response');
-    res.json(dbMealType);
+    res.json(dbDietType);
   });
 });
+
 //This route is the biggest aspect of our app and alot is happening in it.
 //Esesentially when the user performs a search we check if the search exist in our database.  If it doesn't we got out to the external api 
 //and bring back the result, create associations between those recipes and that search, and render the recipes to the page.
 //If a search is found in our database then we pull them from our database and render them to the page. 
-
-router.get('/api/nutrients/:userEmail/:nutrients/:healthCode/:proteinCode/:mealTypeCode', function (req, res) {
+router.get('/api/nutrients/:userEmail/:nutrients/:healthCode/:proteinCode/:dietTypeCode', function (req, res) {
 
   console.log(
-    req.params.userEmail + 'has searched for ' + req.params.nutrients + ' & ' + req.params.healthCode + ' & ' + req.params.proteinCode + ' & ' +req.params.mealTypeCode
+    req.params.userEmail + 'has searched for ' + req.params.nutrients + ' & ' + req.params.healthCode + ' & ' + req.params.proteinCode + ' & ' +req.params.dietTypeCode
   );
 
   // const userEmail = req.params.userEmail;
 
-  const queryURL = `https://api.edamam.com/search?q=chicken&app_id=08b4fa57&app_key=8531f8a5f6847b98f73396ab5968aed9&nutrients%5B${req.params.nutrients}%5D=20%2B&health=${req.params.healthCode}`;
+  const queryURL = `https://api.edamam.com/search?q=${req.params.proteinCode}&app_id=08b4fa57&app_key=8531f8a5f6847b98f73396ab5968aed9&nutrients%5B${req.params.nutrients}%5D=20%2B&health=${req.params.healthCode}&diet=${req.params.dietTypeCode}`;
 
   //This code is checking if the search query made by the user exists in the search table in our datbase
   db.Searches.findOne({
@@ -70,8 +70,8 @@ router.get('/api/nutrients/:userEmail/:nutrients/:healthCode/:proteinCode/:mealT
         searchQuery: queryURL,
         NutrientCode: req.params.nutrients,
         HealthApiCode: req.params.healthCode,
-        ProteinApiCode: req.params.proteinCode,
-        mealTypeApiCode: req.params.mealTypeCode,
+        qParameter: req.params.proteinCode,
+        DietTypeApiCode: req.params.dietTypeCode,
       }).then(function (newSearch) {
         console.log('past search create');
 
