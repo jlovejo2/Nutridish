@@ -1,124 +1,115 @@
 form.signup,
 form.login {
-  margin-top: 30px;
+  margin-top: 5px;
   color: black;
-  border-radius: 25px;
+  border-radius: 5px;
   background-image: url(/images/purty_wood.png);
   display: inline-table;
-  font-weight: bold; 
+  font-weight: bold;
+  text-align: center;
 }
 
-html {
-	height: 100%;
-}
-
-body { 
+body {
   background-image: url(/images/wood_pattern.png);
-  /* line-height: 0; */
 }
 
 .navbar {
-	background-image: url(/images/tileable_wood_texture.png);
+  background-image: url(/images/tileable_wood_texture.png);
 }
 
-.container_search {
-	padding-top: 25px!important;
-	padding-right: 30px;
-	padding-bottom: 50px;
-	padding-left: 80px;
-	display: contents;
-	margin-bottom: 5%!important;
+#login_button {
+  text-align: center;
 }
 
-.title{
-	color: white;
-	text-align: center!important;
-	font-size: 78px;
-	font-family: 'Comfortaa', cursive;
-	font-weight: 750!important;
-	/* position: absolute;
-	z-index: 1000;
-	top: 250px;
-	left: 675px; */
-	display: block;
-	margin-block-start: 0.15em;
-    margin-block-end: 0.15em;
-    margin-inline-start: 0px;
-	margin-inline-end: 0px;
-	line-height: 350px;
-  }
+#search_for_recipe_button {
+  text-align: center;
+}
 
-.b-green{
-	  color: rgb(37, 187, 37);
-  }
+#past_recipe_button {
+  text-align: center;
+}
+
+.title {
+  color: white;
+  text-align: center !important;
+  font-size: 78px;
+  font-family: "Comfortaa", cursive;
+  font-weight: 750 !important;
+  display: block;
+  margin-block-start: 0.15em;
+  margin-block-end: 0.15em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  line-height: 350px;
+}
+
+.b-green {
+  color: rgb(37, 187, 37);
+}
+
 #loginForm {
-	color: green!important;
+  color: green !important;
+}
+
+#welcome {
+  color: green !important;
+}
+
+.member-name {
+  color: black !important;
 }
 
 .navbar-brand {
-	color: green !important;
-}
-
-.signUp	{
-	padding-top: 50px;
-	padding-right: 30px;
-	padding-bottom: 50px;
-	padding-left: 80px;
+  color: green !important;
 }
 
 footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: #546e7a;
-	color: white;
-	text-align: center;
-	text-shadow: ivory;
-	text-size-adjust: 15px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .foodpic {
-	background-image: url(../images/grains.jpg);
-	height: 10%;
-	flex-wrap: inherit;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-} 
+  background-image: url(../images/grains.jpg);
+  height: 45px;
+  flex-wrap: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .row {
-	background-image: url(/images/wood_pattern.png);
+  background-image: url(/images/wood_pattern.png);
 }
 
 .list-group-item {
-	background-image: url(/images/purty_wood.png);
+  background-image: url(/images/purty_wood.png);
 }
 
 .btn {
-	background-color: green;
-	color: snow;
+  background-color: green;
+  color: snow;
 }
 
 .card-header {
-	/* justify-content: center!important; */
-	background-image: url(/images/wood_pattern.png);
+  /* justify-content: center!important; */
+  background-image: url(/images/wood_pattern.png);
 }
 
 .card {
-	background-image: url(/images/wood_pattern.png);
+  background-image: url(/images/wood_pattern.png);
 }
 
 #accordion {
-	width: 100%;
+  width: 100%;
 }
 
 .input-group-text {
-	background-image: url(/images/purty_wood.png);
-	font-weight:bold; 
+  background-image: url(/images/purty_wood.png);
+  font-weight: bold;
 }
 
-.search_data{
-	width: 170px;
-	
+.search_data {
+  width: 170px;
 }
