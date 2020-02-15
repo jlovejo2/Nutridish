@@ -1,7 +1,4 @@
-
 $(document).ready(function () {
-
-
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.ajax('/api/user_data', {
@@ -10,7 +7,6 @@ $(document).ready(function () {
     $('.member-name').text(data.email);
     $('#recipesDiv').attr('data-useremail', data.email);
   });
-
   //This runs a get request when the page is rendered to place the nutrients in nutrient table as options in the pulldown menu
   $.ajax('/api/nutrientCodes', {
     type: 'GET'
@@ -56,6 +52,20 @@ $(document).ready(function () {
       proteinSelectDiv.append(inputOption);
     }
   });
+  $.ajax('/api/mealTypeCodes', {
+    type: 'GET'
+  }).then(function (data) {
+    console.log(data);
+    const mealTypeSelectDiv = $('#mealTypeInputGroup');
+
+    for (let mealType of data) {
+      let inputOption = $('<option>').attr({ 'class': 'mealType-item' });
+
+      inputOption.attr({ 'value': `${mealType.mealTypeApiCode}` });
+      inputOption.text(mealType.mealTypeApiCode);
+      mealTypeSelectDiv.append(inputOption);
+    }
+  });
 
   //This code starts the click event listener on the search button
   $('#searchButton').on('click', function () {
@@ -66,6 +76,7 @@ $(document).ready(function () {
     const nutrientApiCode = $('#nutrientInputGroup')[0].value;
     const healthApiCode = $('#healthInputGroup')[0].value;
     const proteinApiCode = $('#proteinInputGroup')[0].value;
+    const mealTypeApiCode = $('#mealTypeInputGroup')[0].value;
     console.log('onlclick');
     //This code runs a get request to our api with the value of the selected nutrient sent as a parameter in the url
     window.location.href =
