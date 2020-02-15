@@ -1,3 +1,8 @@
+<div clas="row">
+    <a href="/members">back to search</a>
+    <button class="btn btn-primary btn-sm" id="viewSavedRecipes" type="input">Click to Save Recipe</button>
+</div>
+
 {{#each recipe}}
 <div class="col-sm-12 text-center">
     <div class="card m-5" style="">
@@ -33,7 +38,7 @@
                                 data-parent="#accordion">
                                 <div class="card-body">
                                     {{#each digest}}
-                                    <li class="list-group-item">{{label}} Amount:{{daily}} {{unit}}</li>
+                                    <li class="list-group-item">{{label}} Amount:{{daily}} {{unitRelative}}</li>
                                     {{/each}}
                                 </div>
                             </div>
