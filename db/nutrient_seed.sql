@@ -29,5 +29,3 @@ INSERT INTO Nutrients (nutrientApiCode, nutrientName) VALUES ('VITC', 'vitamin C
 INSERT INTO Nutrients (nutrientApiCode, nutrientName) VALUES ('VITD', 'vitamin D');
 INSERT INTO Nutrients (nutrientApiCode, nutrientName) VALUES ('VITK1', 'vitamin K');
 INSERT INTO Nutrients (nutrientApiCode, nutrientName) VALUES ('ZN', 'zinc');
-
-

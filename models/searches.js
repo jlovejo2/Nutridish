@@ -8,6 +8,8 @@ module.exports = function (sequelize, DataTypes) {
     NutrientCode: DataTypes.STRING,
     NutrientAmt: DataTypes.INTEGER,
     HealthApiCode: DataTypes.STRING,
+    ProteinApiCode: DataTypes.STRING,
+    MealTypeApiCode: DataTypes.STRING,
     createdAt: {
       //code aid from from yan
       //This column had to be made null because sequelize automatically creates this column on user input
