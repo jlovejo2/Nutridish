@@ -50,6 +50,8 @@ body {
 
 .b-green{
 	  color: rgb(37, 187, 37);
+	  font-family: 'Comfortaa', cursive;
+		font-weight: 750!important;
   }
 #loginForm {
 	color: green!important;
