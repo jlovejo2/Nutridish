@@ -1,7 +1,6 @@
-<div clas="row">
+<div class="rowS">
     <button class="btn btn-primary btn-sm" id="viewSavedRecipes" type="input">Click to View Saved Recipes</button>
-</div>
-
+</div> 
 {{#each recipe}}
 <div class="col-sm-12 text-center">
     <div class="card m-5" style="">
@@ -9,6 +8,7 @@
             <div class="col-md-12 mt-2">
                 {{!-- <img src={{recipe.image}} class="card-img-mid" alt="Yummy"> --}}
                 <a href={{url}} target="_blank" class="card-link"><img src={{img}} class="card-img-mid" alt="Yummy"></a>
+                <br />
                 <div class="row col-sm-12 d-flex justify-content-center">
                     <button class="btn btn-primary btn-sm saveRecipe" type="input" data-recipeId="{{id}}">Click to Save
                         Recipe</button>
@@ -24,7 +24,6 @@
                     <li class="list-group-item">{{this}}</li>
                     {{/each}}
                 </ul>
-            </div>
             <div id="accordion">
                 <div class="card">
                     <div class="card-header mx-auto" id="headingOne">
@@ -47,5 +46,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 {{/each}}
