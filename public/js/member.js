@@ -7,6 +7,7 @@ $(document).ready(function () {
     $('.member-name').text(data.email);
     $('#recipesDiv').attr('data-useremail', data.email);
   });
+
   //This runs a get request when the page is rendered to place the nutrients in nutrient table as options in the pulldown menu
   $.ajax('/api/nutrientCodes', {
     type: 'GET'
@@ -52,18 +53,18 @@ $(document).ready(function () {
       proteinSelectDiv.append(inputOption);
     }
   });
-  $.ajax('/api/mealTypeCodes', {
+  $.ajax('/api/dietTypeCodes', {
     type: 'GET'
   }).then(function (data) {
     console.log(data);
-    const mealTypeSelectDiv = $('#mealTypeInputGroup');
+    const dietTypeSelectDiv = $('#dietTypeInputGroup');
 
-    for (let mealType of data) {
+    for (let dietType of data) {
       let inputOption = $('<option>').attr({ 'class': 'mealType-item' });
 
-      inputOption.attr({ 'value': `${mealType.mealTypeApiCode}` });
-      inputOption.text(mealType.mealTypeApiCode);
-      mealTypeSelectDiv.append(inputOption);
+      inputOption.attr({ 'value': `${dietType.dietTypeCode}` });
+      inputOption.text(dietType.dietTypeCode);
+      dietTypeSelectDiv.append(inputOption);
     }
   });
 
@@ -76,11 +77,12 @@ $(document).ready(function () {
     const nutrientApiCode = $('#nutrientInputGroup')[0].value;
     const healthApiCode = $('#healthInputGroup')[0].value;
     const proteinApiCode = $('#proteinInputGroup')[0].value;
-    const mealTypeApiCode = $('#mealTypeInputGroup')[0].value;
+    const dietTypeApiCode = $('#dietTypeInputGroup')[0].value;
+
     console.log('onlclick');
     //This code runs a get request to our api with the value of the selected nutrient sent as a parameter in the url
     window.location.href =
-      '/api/nutrients/' + userEmail1 + '/' + nutrientApiCode + '/' + healthApiCode;
+      '/api/nutrients/' + userEmail1 + '/' + nutrientApiCode + '/' + healthApiCode + '/' + proteinApiCode + '/' + dietTypeApiCode;
   });
 
   //This code starts the click event listener
