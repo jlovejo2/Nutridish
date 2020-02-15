@@ -1,9 +1,9 @@
-USE nutridish_db;
+USE kiwbxw4e3dt7q258;
 
-INSERT INTO proteins (proteinName) VALUES ('Beef');
-INSERT INTO proteins (proteinName) VALUES ('Chicken');
-INSERT INTO proteins (proteinName) VALUES ('Lamb');
-INSERT INTO proteins (proteinName) VALUES ('Pork');
-INSERT INTO proteins (proteinName) VALUES ('Seitan');
-INSERT INTO proteins (proteinName) VALUES ('Steak');
-INSERT INTO proteins (proteinName) VALUES ('Tofu');
+INSERT INTO protein (proteinApiCode) VALUES ('Beef');
+INSERT INTO protein (proteinApiCode) VALUES ('Chicken');
+INSERT INTO protein (proteinApiCode) VALUES ('Lamb');
+INSERT INTO protein (proteinApiCode) VALUES ('Pork');
+INSERT INTO protein (proteinApiCode) VALUES ('Seitan');
+INSERT INTO protein (proteinApiCode) VALUES ('Steak');
+INSERT INTO protein (proteinApiCode) VALUES ('Tofu');
