@@ -8,7 +8,7 @@ The link to github is shown below:
 https://github.com/jlovejo2/Project_2.git
 
 The link to the functional app is shown below:
-https://git.heroku.com/nutridish.git
+https://nutridish.herokuapp.com
 
 ## Table of Contents
 * [User Story](#user-story)
